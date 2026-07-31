@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nova Space — the KNUST catalogue</title>
+<meta name="description" content="Sell the electronics you can't carry home. Buy them for less. Have it delivered to your hostel." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/nova-space/public/css/styles.css" />
+</head>
+<body>
+
+<div class="announce" id="announce">Free hostel delivery on orders over GHS 300</div>
+
+<header class="head">
+  <img src="img/nova logo.png" class="wordmark" id="logo" data-nav="browse"></img>
+
+  <nav class="head-nav">
+    <button data-collection="all" class="on">Everything</button>
+    <button data-collection="resale">Resale</button>
+    <button data-collection="store">Store</button>
+    <button data-collection="essential">Deliver</button>
+  </nav>
+
+  <input id="q" type="search" placeholder="Search" autocomplete="off" aria-label="Search listings" />
+
+  <div class="head-acts">
+    <button data-nav="sell">Sell</button>
+    <button data-nav="account" id="accountBtn">Account</button>
+    <button id="cartBtn" class="cart-btn">Bag <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <p class="eyebrow">KNUST · Kumasi</p>
+  <h1>The things you<br /><em>can't carry home.</em></h1>
+  <p class="hero-note">Every year students haul fridges and fans hundreds of kilometres, while freshers pay full price for the same things at the gate. This is the catalogue that closes the loop.</p>
+  <button class="quiet-link" data-collection="resale">browse the resale floor</button>
+</section>
+
+<div class="collection-bar">
+  <div class="collection-meta">
+    <span id="collectionName">Everything</span>
+    <span id="collectionCount"></span>
+  </div>
+  <label class="sort-wrap">
+    <span>Sort</span>
+    <select id="sort">
+      <option value="new">Latest</option>
+      <option value="price_asc">Price ascending</option>
+      <option value="price_desc">Price descending</option>
+    </select>
+  </label>
+</div>
+
+<main id="main" class="main"></main>
+
+<footer class="foot">
+  <div>
+    <p class="foot-mark">Nova Space</p>
+    <p class="foot-note">A student marketplace for Kwame Nkrumah University of Science and Technology.</p>
+  </div>
+  <div class="foot-cols">
+    <div>
+      <p class="foot-h">Collections</p>
+      <button data-collection="resale">Resale</button>
+      <button data-collection="store">Store</button>
+      <button data-collection="essential">Deliver</button>
+    </div>
+    <div>
+      <p class="foot-h">Your account</p>
+      <button data-nav="orders">Orders</button>
+      <button data-nav="mylistings">Listings</button>
+      <button data-nav="sales">Sales</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart drawer -->
+<aside class="drawer" id="drawer" hidden aria-label="Shopping bag">
+  <div class="scrim" data-close></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">Your bag</h2>
+      <button data-close class="x" aria-label="Close bag">Close</button>
+    </div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-foot" id="cartFoot" hidden></div>
+  </div>
+</aside>
+
+<!-- Modal -->
+<div class="modal-root" id="modalRoot" hidden>
+  <div class="scrim" data-close></div>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="x modal-x" data-close aria-label="Close">Close</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script type="module" src="/nova-space/public/js/app.js"></script>
+</body>
+</html>
